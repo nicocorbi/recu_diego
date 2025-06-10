@@ -3,9 +3,19 @@
 {% block title %}Dónde Encontrarnos{% endblock %}
 
 {% block content %}
-  <h1>Dónde Encontrarnos</h1>
-  <p>Nos encontramos en la Alhambra de Granada.</p>
-  <div id="map"></div>
+  <div style="background: linear-gradient(135deg, #fbeee6 0%, #f5e6fa 100%); min-height: 100vh; padding: 40px 0;">
+    <div style="max-width: 700px; margin: 0 auto; background: #fff; border-radius: 22px; box-shadow: 0 8px 32px rgba(44,62,80,0.12); padding: 38px 36px 32px 36px; text-align: center;">
+      <div style="font-size: 3em; color: #c0392b; margin-bottom: 10px;">
+        <span style="vertical-align: middle;">📍</span>
+      </div>
+      <h1 style="color: #c0392b; margin-bottom: 18px; font-size: 2.2em; letter-spacing: 1px;">Dónde Encontrarnos</h1>
+      <p style="font-size: 1.15em; color: #444; margin-bottom: 28px;">
+        Nos encontramos en la <strong>Alhambra de Granada</strong>.<br>
+        <span style="color: #a93226;">¡Ven a visitarnos y disfruta de nuestras hamburguesas con las mejores vistas!</span>
+      </p>
+      <div id="map" style="height: 400px; width: 100%; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.10); border: 2px solid #fbeee6;"></div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block scripts %}
@@ -17,7 +27,7 @@
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     L.marker([37.176077, -3.588141]).addTo(map)
-      .bindPopup('Restaurante en la Alhambra de Granada')
+      .bindPopup('<b>Restaurante en la Alhambra de Granada</b><br>¡Te esperamos!')
       .openPopup();
   </script>
 {% endblock %}
