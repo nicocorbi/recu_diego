@@ -16,9 +16,9 @@
   <main>
     <h1>Menú del Restaurante</h1>
     <ul>
-      <% menu.forEach(item => { %>
-        <li><%= item.name %> - €<%= item.price %></li>
-      <% }) %>
+      {% for item in menu %}
+        <li>{{ item.name }} - €{{ item.price }}</li>
+      {% endfor %}
     </ul>
   </main>
 </body>

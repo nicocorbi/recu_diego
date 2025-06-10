@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Página "Dónde Encontrarnos"
 router.get('/', (req, res) => {
-  res.send('<h1>Dónde Encontrarnos</h1><p>Estamos ubicados en España.</p>');
+  res.render('location.njk');
 });
 
 module.exports = router;
