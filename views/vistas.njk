@@ -1,12 +1,15 @@
 {% extends "base.njk" %}
 
-{% block title %}Menú del Restaurante{% endblock %}
+{% block title %}Menú de Hamburguesas{% endblock %}
 
 {% block content %}
-  <h1>Menú del Restaurante</h1>
-  <ul>
+  <h1>Menú de Hamburguesas</h1>
+  <ul style="list-style: none; padding: 0;">
     {% for item in menu %}
-      <li>{{ item.name }} - €{{ item.price }}</li>
+      <li style="margin-bottom: 30px;">
+        <img src="{{ item.image }}" alt="{{ item.name }}" style="width:200px; display:block; margin-bottom:10px;">
+        <strong>{{ item.name }}</strong> - €{{ item.price }}
+      </li>
     {% endfor %}
   </ul>
 {% endblock %}
