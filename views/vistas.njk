@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú del Restaurante</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="/">Menú</a>
-      <a href="/about">Sobre Nosotros</a>
-      <a href="/location">Dónde Encontrarnos</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Menú del Restaurante</h1>
-    <ul>
-      {% for item in menu %}
-        <li>{{ item.name }} - €{{ item.price }}</li>
-      {% endfor %}
-    </ul>
-  </main>
-</body>
-</html>
+{% extends "base.njk" %}
+
+{% block title %}Menú del Restaurante{% endblock %}
+
+{% block content %}
+  <h1>Menú del Restaurante</h1>
+  <ul>
+    {% for item in menu %}
+      <li>{{ item.name }} - €{{ item.price }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

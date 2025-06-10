@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dónde Encontrarnos</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map { height: 400px; width: 100%; margin-top: 20px; }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="/">Menú</a>
-      <a href="/about">Sobre Nosotros</a>
-      <a href="/location">Dónde Encontrarnos</a>
-    </nav>
-  </header>
-  <main>
-    <h1>Dónde Encontrarnos</h1>
-    <p>Nos encontramos en la Alhambra de Granada.</p>
-    <div id="map"></div>
-  </main>
+{% extends "base.njk" %}
+
+{% block title %}Dónde Encontrarnos{% endblock %}
+
+{% block content %}
+  <h1>Dónde Encontrarnos</h1>
+  <p>Nos encontramos en la Alhambra de Granada.</p>
+  <div id="map"></div>
+{% endblock %}
+
+{% block scripts %}
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
     var map = L.map('map').setView([37.176077, -3.588141], 17);
@@ -33,5 +20,4 @@
       .bindPopup('Restaurante en la Alhambra de Granada')
       .openPopup();
   </script>
-</body>
-</html>
+{% endblock %}
