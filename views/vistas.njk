@@ -3,34 +3,42 @@
 {% block title %}Menú de Hamburguesas{% endblock %}
 
 {% block content %}
-  <h1 style="text-align:center; margin-bottom: 40px;">Menú de Hamburguesas</h1>
-  <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
-    {% for item in menu %}
-      <div style="
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        width: 260px;
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.2s;
-      " onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="{{ item.image }}" alt="{{ item.name }}" style="width:180px; height:140px; object-fit:cover; border-radius: 12px; margin-bottom: 16px;">
-        <h2 style="margin: 0 0 10px 0; font-size: 1.3em; color: #c0392b;">{{ item.name }}</h2>
-        <div style="font-size: 1.1em; color: #333; margin-bottom: 10px;">€{{ item.price }}</div>
-        <button style="
-          background: #c0392b;
-          color: #fff;
-          border: none;
-          border-radius: 8px;
-          padding: 8px 18px;
-          font-size: 1em;
-          cursor: pointer;
-          transition: background 0.2s;
-        " onmouseover="this.style.background='#a93226'" onmouseout="this.style.background='#c0392b'">
-          Pedir
-        </button>
+  <div style="background: linear-gradient(135deg, #fbeee6 0%, #f5e6fa 100%); min-height: 100vh; padding: 40px 0;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <h1 style="text-align:center; margin-bottom: 40px;">Menú de Hamburguesas</h1>
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
+        {% for item in menu %}
+          <div style="
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            width: 260px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+          " onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <a href="/menu/{{ loop.index0 }}" style="text-decoration:none; color:inherit;">
+              <img src="{{ item.image }}" alt="{{ item.name }}" style="width:180px; height:140px; object-fit:cover; border-radius: 12px; margin-bottom: 16px;">
+              <h2 style="margin: 0 0 10px 0; font-size: 1.3em; color: #c0392b;">{{ item.name }}</h2>
+            </a>
+            <div style="font-size: 1.1em; color: #333; margin-bottom: 10px;">€{{ item.price }}</div>
+            <a href="/menu/{{ loop.index0 }}" style="text-decoration:none;">
+              <button style="
+                background: #c0392b;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                padding: 8px 18px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.2s;
+              " onmouseover="this.style.background='#a93226'" onmouseout="this.style.background='#c0392b'">
+                Pedir
+              </button>
+            </a>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </div>
   </div>
 {% endblock %}

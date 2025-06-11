@@ -1,0 +1,19 @@
+{% extends "base.njk" %}
+
+{% block title %}{{ burger.name }}{% endblock %}
+
+{% block content %}
+  <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+    <img src="{{ burger.image }}" alt="{{ burger.name }}" style="width:300px; height:220px; object-fit:cover; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.10); margin-bottom: 24px;">
+    <h1 style="color: #c0392b; font-size: 2.2em; margin-bottom: 12px;">{{ burger.name }}</h1>
+    <div style="font-size: 1.3em; color: #333; margin-bottom: 18px;">Precio: <strong>€{{ burger.price }}</strong></div>
+    <p style="color: #555; font-size: 1.1em; max-width: 500px;">
+      {% if burger.description %}
+        {{ burger.description }}
+      {% else %}
+        ¡Una hamburguesa deliciosa y única, preparada con los mejores ingredientes!
+      {% endif %}
+    </p>
+    <a href="/" style="margin-top: 30px; color: #c0392b; text-decoration: underline;">Volver al menú</a>
+  </div>
+{% endblock %}
