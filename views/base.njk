@@ -7,37 +7,67 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map { height: 400px; width: 100%; margin-top: 20px; }
-    nav {
-      background: #eee;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
     .logo {
       height: 60px;
       vertical-align: middle;
       margin-right: 20px;
     }
     header {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      padding: 0;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      padding: 10px 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+    .brand span {
+      font-size: 1.4em;
+      color: #c0392b;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: #fbeee6;
+      color: #c0392b;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="/logo.png" alt="Logo del Restaurante" class="logo" />
-    <nav>
-      <a href="/">Menú</a>
-      <a href="/about">Sobre Nosotros</a>
-      <a href="/location">Dónde Encontrarnos</a>
-    </nav>
+    <div class="nav-container">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="Logo" class="logo" />
+        <span>Hamburguesas Alhambra</span>
+      </a>
+      <nav>
+        <a href="/">Menú</a>
+        <a href="/about">Sobre Nosotros</a>
+        <a href="/location">Dónde Encontrarnos</a>
+      </nav>
+    </div>
   </header>
   <main>
     {% block content %}{% endblock %}
